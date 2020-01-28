@@ -7,7 +7,6 @@
 - Don't slap pandas.
 - Seriously, don't. What's wrong with you?
 - Korzystając ze Ściągi akceptujesz Regulamin Korzystania ze Ściągi, Politykę Gospodarowania Danymi Pozyskanymi z Inwigilacji Użytkowników, oraz oświadczasz zapoznanie się i zaakceptowanie poniższego oświadczenia:
-W niniejszych zasadach opisano informacje na temat danych, które przetwarzamy w celu dostarczenia usługi czat-ruletki 6obcy.
 
 I. Jakiego rodzaju informacje gromadzimy?
 

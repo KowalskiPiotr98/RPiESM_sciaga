@@ -29,7 +29,7 @@ Dane z plików cookie przechowywane na Twoim urządzeniu, w tym identyfikatory i
 
 II. Jak korzystamy z tych informacji?
 
-Wykorzystujemy posiadane informacje w celach dostarczania, ulepszania, zabawy po godzinach oraz w celu dbania o bezpieczeństwo naszych ściąg.
+Wykorzystujemy posiadane informacje w celach dostarczania, ulepszania, zabawy po godzinach, danych przykładowych dla studentów Inżynierii i Analizy Danych oraz w celu dbania o bezpieczeństwo naszych ściąg.
 
 Badania i rozwój
 
@@ -44,6 +44,8 @@ III. Jak udostępniamy te informacje?
 Informacje na Twój temat udostępniamy innym osobom w następujący przypadkach:
 
 Kiedy ładnie poproszą.
+
+Kiedy przez przypadek wypadną nam z torby w transporcie publicznym.
 
 Udostępnianie informacji partnerom zewnętrznym
 

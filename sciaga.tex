@@ -5,8 +5,8 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{multicol}
+\usepackage{marvosym}
 \usepackage[left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm]{geometry}
-%\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm]{geometry}
 \author{Piotr Kowalski}
 \title{Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej}
 
@@ -14,9 +14,47 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski \today , wersja 0.0
+            \MaleMale \FemaleFemale Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - \textcopyright Piotr Kowalski, \today , wersja 0.1, MIT License \FemaleFemale \MaleMale
         \end{center}
         ]
-        masło
+        \noindent\textbf{\large Zdarzenie elementarne}\\
+        Każdy możliwy wynik eksperymentu losowego nazywamy \textbf{zdarzeniem elementarnym} $\omega$, a zbiór wszystkich możliwych wyników eksperymentu (wszystkich zdarzeń elementarnych) nazywamy \textbf{zbiorem zdarzeń elementarnych} i oznaczamy $\Omega, (\omega\in\Omega)$.
+        
+        \noindent\textbf{\large Aksjomaty prawdopodobieństwa}\\
+        Dla danego zbioru zdarzeń elementarnych $\Omega$ oraz $\sigma$-ciała zdarzeń losowych $\mathcal{F}$, \textbf{prawdopodobieństwem} nazywamy funkcję $P:\mathcal{F}\rightarrow \mathcal{R}$ spełniającą:\\
+        1. Dla dowolnego zdarzenia losowego $A\in\mathcal{F}$, $P(A)\geq 0$.\\
+        2. $P(\Omega)=1$.\\
+        3. Dla dowolnego nieskończonego ciągu zdarzeń losowych $A_1, A_2, \ldots, \forall_{n\in\mathcal{N}} A_n\in\mathcal{F}$, parami rozłącznych, mamy $P\left(\bigcup^\infty_{n=1}\right)=\sum^\infty_{n=1}P(A_n)$.
+
+        \noindent \textbf{Dla dowolnych zdarzeń} $A, B$ mamy\\ $P(A\cup B)=P(A)+P(B)-P(A\cap B)$.
+
+        \noindent \textbf{\large Prawdopodobieństwo warunkowe}\\
+        Prawdopodobieństwo $A$ pod warunkiem że zaszło zdarzenie $B$: $P(A|B)=\frac{P(A\cup B)}{P(B)}$.\\
+        Jeżeli $P(A_1\cap \ldots \cap A_n)>0$, to $P(A_1\cap \ldots \cap A_n) = P(A_1)\prod_{i=2}^nP(A_i|A_1 \cap\ldots\cap A_{i-1})$.
+
+        \noindent \textbf{\large Prawdopodobieństwo zupełne}\\
+        Ciąg zdarzeń nazywamy zupełnym, jeśli:\\
+        1. $\bigcup_i A_i = \Omega$,\\
+        2. $\forall_{i\neq j}A_i \cap A_j = \emptyset$,\\
+        3. $\forall_i P(A_i)>0$.\\
+        \textbf{Twierdzenie}\\
+        Jeśli zdarzenia tworzą układ zupełny, to dla dowolnego zdarzenia $B$ mamy $P(B)=\sum_iP(B|A_i)P(A_i)$
+
+        \noindent \textbf{\large Reguła Bayesa}\\
+        \textbf{Twierdzenie} Niech $A_i$ tworzą układ zupełny. Wtedy dla dowolnego zdarzenia losowego $B, P(B)>0$ i dowolnego $j$ zachodzi $P(A_j|B)=\frac{P(B|A_j)P(A_j)}{\sum_iP(B|A_i)P(A_i)}$
+
+        \noindent \textbf{\large Niezależność zdarzeń}\\
+        \textbf{Definicja} Zdarzenia są wzajemnie niezależne gdy $P(A\cap B)=P(A)\cdot P(B)$\\
+        Jeżeli zdarzenia $A$ i $B$ są niezależne, to niezależne są również zdarzenia $A$ i $\overline{B}$, $\overline{A}$ i $B$, $\overline{A}$ i $\overline{B}$.\\
+        Zdarzenia są wzajemnie niezależne jeśli $P\left(\bigcap_{j=1}^kA_{i_j}\right) = \prod_{j=1}^kP(A_{i_j})$.\\
+        Jeśli $A_1\ldots$ są zdarzeniami wzajemnie niezależnymi, to $\left(\bigcup_{i=1}^nA_i\right)=1-\prod_{i=1}^n(1-P(A_i))$
+
+        \noindent \textbf{\large Doświadczenie Bernoulliego}\\
+        Doświadczenie kończące się sukcesem z prawdopodobieństwem p lub porażką z prawdopodobieństwem 1-p.\\
+        Ciąg n doświadczeń z prawd. sukcesu p oznaczamy $b(n,p)$.\\
+        Prawdopodobieństwo uzyskania ciągu składającego się z k sukcesów, przy założeniu niezależności: $p^k(1-p)^{n-k}$.\\
+        Prawdopodobieństwo uzyskania k sukcesów w n niezależnych doświadczeniach z $p\in[0,1]$: $b(k;n,p)=\binom{n}{k}p^k(1-p)^{n-k}$.\\
+        Dla $n\geq25$ i $\lambda = n\cdot p \leq10$ możemy przybliżyć rozkładem Poissona (fr. ryba): $b(k;n,p)\approx e^{-np}\frac{(np)^k}{k!}$, na przykład:\\
+        $\sum_{k=0}^{14}b(k;500,0.02)\approx F(14;500\cdot0.02)$, gdzie $F$ jest dystrybuantą rozkładu Ryby, dostępna w tablicach.
     \end{multicols*}
 \end{document}

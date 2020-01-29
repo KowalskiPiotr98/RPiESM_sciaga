@@ -82,6 +82,20 @@
         $P(X = a)=0$ dla dowolnego $a\in R$\\
         Własności funkcji gęstości:\\
         $\forall_{x\in R}f(x)\geq 0$, $\int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x=1$
+        
+
+        \noindent\textbf{\large Funkcje zmiennych losowych}\\
+        Dyskretne:\\ $P(Y=y_i)=\sum_{\{x_j\in\chi:g(x_j)=y_i\}}P(X=x_j)$\\
+        Ciągłe: gęstość liniowej funkcji zm.los.\\ $\forall_{a\neq 0}b\in R f_{aX+b}(y)=\frac{1}{|a|}f_X\left(\frac{y-b}{a}\right)$\\
+        gęstość kwadratu zm.los.\\
+        \[
+            f_{X^2}(y)=
+            \begin{cases}
+                0, x\leq 0\\
+                \frac{1}{2\sqrt{y}}\left[f_X(\sqrt{y})+f_X(-\sqrt{y})\right], x>0
+            \end{cases}
+        \]
+        Jeśli $g$ jest ściśle monotoniczna i różniczkowalna, to $Y=g(X)$: $f_Y(y)=f_X(g^{-1}(y))\cdot\frac{1}{|g'(g^{-1}(y))|}$
 
         \noindent \textbf{\large Doświadczenie Bernoulliego}\\
         Doświadczenie kończące się sukcesem z prawdopodobieństwem p lub porażką z prawdopodobieństwem 1-p.\\

@@ -178,5 +178,30 @@
         2.Prawdop. zaobserwowania w $\Delta t$ więcej niż jednego zdarzenia wynosi $\circ(\Delta t)$.
         3. Liczba zaobserwowanych zd.los. w $\Delta t$ jest niezależna od liczby wcześniej zaobserwowanych zdarzeń.\\
         Jeśli 1-3 spełnione, to $P_k(t)$, że liczba zdarzeń zaobserwowanych do chwili $t$ jest równa $k$ wynosi $P_k(t)=e^{-\lambda t}\frac{(\lambda t)^k}{k!},\,E[X]=\lambda=V(X)$
+
+        \noindent\textbf{\large Rozkłady zmiennych ciągłych}\\
+        \textbf{Jednostajny}\\
+        $X$ ma rozkład jednostajny na $[a,b],\,X\sim U(a,b)$ jeśli $f(x)=\frac{1}{b-a}$ dla $x\in[a,b]$ i $0$ dla pozostałych.
+        Dla $x\in[a,b),\,F(x)=\frac{x-a}{b-a}$.\\
+        $E[X]=\frac{a+b}{2},\,V(X)=\frac{(b-a)^2}{12}$\\
+        \textbf{Normalny}\\
+        $X\sim N(\mu, \sigma^2),\,f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right]$\\
+        $F(x)=P(X\leq x)=\Phi(\frac{x-\mu}{\sigma})$, gdzie $\Phi$ patrz poniżej,
+        $E[X]=\mu,\,V(X)=\sigma^2$\\
+        Jeśli $X$ ma normalny, to $Y=aX+b\sim N(a\mu+b,a^2\sigma^2)$\\
+        \textbf{Standardowy normalny}\\
+        $U\sim N(0,1)$, gęstość: $\phi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}$, $\Phi(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^xe^{-t^2/2}\mathrm{d}t$.\\
+        \textbf{Wykładniczy}\\
+        Własność braku pamięci: $P(X>s+t|X>t)=P(X>s)$\\
+        $X\sim \exp(\lambda)$, $f(x)=\lambda e^{-\lambda x},\,x\geq 0$ i $0$ gdy $x<0$.
+        $F(x)=1-e^{-\lambda x},\,x\geq 0$.\\
+        \textbf{Gamma}\\
+        Gamma Eulera: $\Gamma(\alpha)=\int_0^{\infty}x^{\alpha-1}e^{-x}\mathrm{d}x,\,\alpha>0$.\\
+        Własności:
+        1. $\Gamma(\alpha+1)=\alpha\cdot\Gamma(\alpha)$
+        2. $\forall_{n\in N}\Gamma(n)=(n-1)!$
+        3. $\forall_{x\in(0,1)}\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin(x\pi)}$\\
+        $X\sim \gamma(\alpha,\beta),\,f(x)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}$ dla $x\geq 0$ i $0$ w p.p.\\
+        $aX\sim\gamma(\alpha,\frac{\beta}{a}),\,E[X]=\frac{\alpha}{\beta},\,V(X)=\frac{\alpha}{\beta^2}$
     \end{multicols*}
 \end{document}

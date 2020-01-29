@@ -14,7 +14,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            \MaleMale \FemaleFemale Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - \textcopyright Piotr Kowalski, \today , wersja 0.2, MIT License \FemaleFemale \MaleMale
+            \MaleMale \FemaleFemale Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - \textcopyright Piotr Kowalski, \today , wersja 0.3, MIT License \FemaleFemale \MaleMale
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -96,6 +96,43 @@
             \end{cases}
         \]
         Jeśli $g$ jest ściśle monotoniczna i różniczkowalna, to $Y=g(X)$: $f_Y(y)=f_X(g^{-1}(y))\cdot\frac{1}{|g'(g^{-1}(y))|}$
+
+        \noindent\textbf{\large Wartość oczekiwana}\\
+        Dyskretne: $E[X]=\sum_{x_i\in X}x_i\cdot P(X=x_i)$\\
+        Ciągłe: $E[X]=\int_{-\infty}^{+\infty}xf(x)\,\mathrm{d}x$\\
+        Dla typu mieszanego o $F(x)=pF_d(x)+(1-p)F_c(x),\,E[X]=pE[X_d]+(1-p)E[X_c]$.\\
+        Dla funkcji zmiennej losowej $Y=g(X)$:
+        {
+            \tiny
+            \[
+                E[g(X)]=
+                \begin{cases}
+                    \sum_ig(x_i)P(X=x_i),\,\text{jeśli } X \text{ jest zm.los. dyskretną}\\
+                    \int_{-\infty}^{+\infty}g(x)f_X(x)\mathrm{d}x,\,\text{jeśli } X \text{ jest zm.los. ciągłą}
+                \end{cases}
+            \]
+        }\\
+        Jeśli istnieje wartość oczekiwana $E[X]$, to $E[aX+b]=aE[X]+b$
+
+        \noindent\textbf{\large Momenty}\\
+        Momentem rzędu $n$-tego względem $c\in R$ zmiennej losowej $X$ nazywamy: $E[(X-c)^n]$\\
+        Momenty zwykłe: $c=0$\\
+        Pierwszy moment: $E[X]$\\
+        Jeśli istnieje $n$-ty moment zwykły, to isnieją wszystkie momenty rzędu mniejszego od $n$\\
+        Momenty centralne: $c=E[X]$\\
+        Wariancja: $V(X)=\sigma_x^2=\sigma^2=E[(X-\mu)^2]=E[X^2]-(E[X])^2$, gdzie $\mu=E[X]$\\
+        $V(aX+b)=V(aX)=a^2V(X)$\\
+        Odchylenie standardowe: $\sigma=\sqrt{V(X)}$
+        Zmienna $X$ jest standaryzowana jeśli $E[X]=0$ i $V(X)=1$\\
+        Standaryzacja: $X^*=\frac{X-\mu}{\sigma}$\\
+        Współczynnik skośności: $\gamma_1=E\left[\left(\frac{X-\mu}{\sigma}\right)\right]=\frac{E[(X-\mu)^3]}{(E[(X-\mu)^2])^{3/2}}$\\
+        Kurtoza: $\gamma_2=\frac{\mu_4}{\sigma^4}-3$
+
+        \noindent\textbf{\large Kwantyle, kwartyle}\\
+        Kwantyl: $\forall_{p\in(0,1)} x_p=Q(p)=F^{-1}(p)=\inf \{x\in R:p\leq F(x)\}$\\
+        Mediana: kwantyl $x_0.5$ rzędu $0.5$.\\
+        Dolny kwartyl $Q_1$ - kwantyl rzędu $0.25$, górny kwartyl $Q_3$ - kwantyl rzędu $0.75$\\
+        Rozkład międzykwartylowy $IQR=Q_3-Q_1$
 
         \noindent \textbf{\large Doświadczenie Bernoulliego}\\
         Doświadczenie kończące się sukcesem z prawdopodobieństwem p lub porażką z prawdopodobieństwem 1-p.\\

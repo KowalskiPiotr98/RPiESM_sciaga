@@ -5,7 +5,6 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{multicol}
-\usepackage{marvosym}
 \usepackage[left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.5cm]{geometry}
 \author{Piotr Kowalski}
 \title{Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej}
@@ -14,7 +13,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            \MaleMale \FemaleFemale Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - \textcopyright Piotr Kowalski, \today , wersja 0.3, MIT License \FemaleFemale \MaleMale
+            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.4
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -217,7 +216,7 @@
         1. $p(x,y)\geq 0$
         2. $\sum_x\sum_yp(x,y)=1$\\
         Rozkłady brzegowe X: $p_X(x)=P(X=x)=\sum_{y\in Y}p(x,y)$, y analogicznie\\
-        Zmienne $X$ i $Y$ są niezależne, gdy $p(x,y)=p_X(x)\cdot p_Y(y)$
+        Zmienne $X$ i $Y$ są niezależne, gdy $p(x,y)=p_X(x)\cdot p_Y(y)$\\
         \textbf{Ciągłe}\\
         $f$ gęstość, jeśli: 
         $P\{(X,Y)\in A\}=\iint_Af(x,y)\mathrm{d}x\mathrm{y}$\\
@@ -243,5 +242,13 @@
         \textbf{Regresja liniowa}\\
         Jeśli $(X,Y)$ dwuwymiarowa zmienna losowa, dla której istnieją $\sigma_X^2,\,\sigma_Y^2$ oraz Cov, to $E\{[Y-(aX+b)]^2\}$ osiąga minimum gdy $a=\rho_{XY}\frac{\sigma_Y}{\sigma_X}$ oraz $b=m_Y-am_X$
         tzn. funkcja regresji zmiennej $Y$ przy $X=x$ jest równa $\frac{y-m_Y}{\sigma_Y}=\rho_{XY}\frac{x-m_X}{\sigma_X}$
+
+        \noindent\textbf{\large Przybliżenie rozkładów}\\
+        \textbf{Przybliżenie normalne}\\
+        $P(S_n\leq x)\approx \Phi(\frac{S_n-n\mu}{\sigma\sqrt{n}})$, gdzie $E[x_i]=\mu,\,V(X_i)=\sigma^2,\,n\geq 50$\\
+        \textbf{Rozkładu dwumianowego rozkładem normalnym}\\
+        Jeśli $S_n\sim b(n,p),\,n\geq 25,\, n\geq 5,\, n(1-p)\geq 5$, to $P(S_n\leq x)\approx\Phi\left(\frac{x+0.5-np}{\sqrt{np(1-p)}}\right)$\\
+        \textbf{Rozkładu Poissona}\\
+        $F(k;\lambda)\approx \Phi\left(\frac{k+0.5-\lambda}{\sqrt{\lambda}}\right),\,\lambda>10$
     \end{multicols*}
 \end{document}

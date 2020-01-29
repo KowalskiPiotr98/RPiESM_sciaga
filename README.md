@@ -1,5 +1,5 @@
-# RPiESM ściąga
-Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej
+# Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej
+## This Ściąga was not tested on animals, unless you count Dawid Kostrzewa as one.
 
 - Ściąga może być wydrukowana dwustronnie na pojedyńczej kartce formatu A4.
 - Do ściągi można ręcznie dopisać swoje własne notatki.

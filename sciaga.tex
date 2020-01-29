@@ -142,5 +142,41 @@
         \textbf{Poisson} (fr. Ryba)\\
         Dla $n\geq25$ i $\lambda = n\cdot p \leq10$ możemy przybliżyć rozkładem Poi\ss ona: $b(k;n,p)\approx e^{-np}\frac{(np)^k}{k!}$, na przykład:\\
         $\sum_{k=0}^{14}b(k;500,0.02)\approx F(14;500\cdot0.02)$, gdzie $F$ jest dystrybuantą rozkładu Ryby, dostępna w tablicach.
+
+        \noindent\textbf{\large Rozkłady zmiennych dyskretnych}\\
+        \textbf{Bernoulli}\\
+        1. Eksperyment składa się z $n$ mniejszych doświadczeń, zwanych próbami,
+        gdzie $n$ jest ustalone i znane przed doświadczeniem.
+        2. Każda próba kończy się sukcesem lub porażką.
+        3. Próby są niezależne.\\
+        $X$ ma rozkład Bernoulliego jeśli
+        \[
+            p(x)=P(X=x)=
+            \begin{cases}
+                1-p,\,x=0\\
+                p,\,x=1
+            \end{cases}
+        \]\\
+        $E[X]=p,\,V(X)=p(1-p)$\\
+        \textbf{Dwumianowy, czyli dalej Bernoulli}\\
+        Zmienną losową $X$ równą liczbie sukcesów w $n$ niezależnych doświadczeniach Bernoulliego nazywamy zmienną o rozkładzie dwumianowym z param. $(n,p)$, oznaczamy $X\sim b(n,p)$.\\
+        $P(X=k)=b(k;n,p)=\binom{n}{k}p^k(1-p)^{n-k}$\\
+        $E[X]=np,\,V(X)=np(1-p)$\\
+        \textbf{Hipergeometryczny}\\
+        1. Losujemy ze zbioru $N$ elementów.
+        2. Każdemu z $N$ obiektów można przypisać sukces lub porażka (mamy $M$ sukcesów).
+        3. Wybieramy $n$ obiektów bez zwracania tak, że wybór każdego $n$ elementowego podzbiotu ma to samo prawdopodobieństwo.\\
+        Liczba sukcesów $X$ ma rozkład hipergeometryczny $X\sim HG(n,M,N)$, $P(X=x)=h(x;n,M,N)=\frac{\binom{M}{x}\binom{N-M}{n-x}}{\binom{N}{n}},\,E[X]=\frac{nM}{N},\,V(X)=\left(\frac{N-n}{N-1}\right)\frac{nM}{N}\left(1-\frac{M}{N}\right)$\\
+        \textbf{Ujemny dwumianowy (Pascala)}\\
+        1. Niezależne próby Bernoulliego. 2. Eksperyment kończy się w chwili uzyskania $r$-tego sukcesu, $r$ ustalone.\\
+        $X$ - Liczba porażek do uzyskania $r$-tego sukcesu ma rozkład ujemny dwumianowy $X\sim NB(r,p),\,nb(x;r,p)=\binom{x+r-1}{r-1}p^r(1-p)^x,\,E[X]=\frac{r(1-p)}{p},\,V(X)]\frac{r(1-p)}{p^2}$\\
+        \textbf{Geometryczny}\\
+        $X$ równa liczbie porażek w ciągu niezależnych doświadczeń Bernoulliego, do uzyskania pierwszego sukcesu, ma rozkład geometryczny.\\
+        Dla $Y=X+1,\,E[Y]=\frac{1}{p},\,V(Y)=\frac{1-p}{p^2}$\\
+        \textbf{Poisson}, The Sequel\\
+        1. Istnieje $\lambda>0$, że w dowolnie krótkim przedziale czasowym $\Delta t$ prawdop. zaobserwowania dokładnie jednego zdarzenia wynosi $\lambda\cdot\Delta t+\circ(\Delta t)$.
+        2.Prawdop. zaobserwowania w $\Delta t$ więcej niż jednego zdarzenia wynosi $\circ(\Delta t)$.
+        3. Liczba zaobserwowanych zd.los. w $\Delta t$ jest niezależna od liczby wcześniej zaobserwowanych zdarzeń.\\
+        Jeśli 1-3 spełnione, to $P_k(t)$, że liczba zdarzeń zaobserwowanych do chwili $t$ jest równa $k$ wynosi $P_k(t)=e^{-\lambda t}\frac{(\lambda t)^k}{k!},\,E[X]=\lambda=V(X)$
     \end{multicols*}
 \end{document}

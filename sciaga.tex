@@ -203,5 +203,45 @@
         3. $\forall_{x\in(0,1)}\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin(x\pi)}$\\
         $X\sim \gamma(\alpha,\beta),\,f(x)=\frac{\beta^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}$ dla $x\geq 0$ i $0$ w p.p.\\
         $aX\sim\gamma(\alpha,\frac{\beta}{a}),\,E[X]=\frac{\alpha}{\beta},\,V(X)=\frac{\alpha}{\beta^2}$
+
+        \noindent\textbf{\large Zmienne losowe dwuwymiarowe}\\
+        dystrybuanta: $F(x,y)=P(X\leq x,Y\leq y)$\\
+        Własności: 
+        1. $\lim_{x\rightarrow-\infty}F(x,y)=0,\,\lim_{y\rightarrow-\infty}F(x,y)=0,\,\lim_{x,y\rightarrow\infty}F(x,y)=1$.
+        2. Niemalejąca ze względu na każdą ze zmiennych.
+        3. Prawostronnie ciągła ze względu na każdą ze zmiennych.
+        4. $F(x_1,y_1)+F(x_2,y_2)-F(x_1,y_2)-F(x_2,y_1)\geq 0$\\
+        \textbf{Dyskretne}\\
+        funkcja prawdop. $p(x,y)=P(X=x,Y=y)$\\
+        Własności:
+        1. $p(x,y)\geq 0$
+        2. $\sum_x\sum_yp(x,y)=1$\\
+        Rozkłady brzegowe X: $p_X(x)=P(X=x)=\sum_{y\in Y}p(x,y)$, y analogicznie\\
+        Zmienne $X$ i $Y$ są niezależne, gdy $p(x,y)=p_X(x)\cdot p_Y(y)$
+        \textbf{Ciągłe}\\
+        $f$ gęstość, jeśli: 
+        $P\{(X,Y)\in A\}=\iint_Af(x,y)\mathrm{d}x\mathrm{y}$\\
+        $f(x,y)=\int_{-\infty}^x\int_{-\infty}^yf(u,v)\mathrm{d}u\mathrm{d}v$\\
+        $f(x,y)\geq 0,\,\iint_{R^2}f(x,y)\mathrm{d}x\mathrm{d}y=1$\\
+        Gęstości brzegowe X: $f_X(x)=\int_{-\infty}^{\infty}f(x,y)\mathrm{d}y$, y analogicznie\\
+        Zmienne $X$ i $Y$ są niezależne, gdy $F(x,y)=F_X(x)\cdot F_Y(y)$, co jest równoważne $f(x,y)=f_X(x)\cdot f_Y(y)$\\
+        \textbf{Funkcje zmiennych losowych}\\
+        Dyskretne:\\
+        Jeśli $X_1,\ldots,X_n$ - niezależnie zmienne o jednakowych rozkładach Bernoulliego, to $S_n=\sum_{i=1}^nX_i\sim b(n,p)$\\
+        Jeśli $X_i\sim b(n_i,p)$, to $\sum_{i=1}^n\sim b(\sum_{i=1}^nn_i,p)$.\\
+        Jeśli $X_i\sim P(\lambda_i)$, to $\sim_{i=1}^nX_i\sim P(\sum_{i=1}^n\lambda_i)$\\
+        Ciągłe:\\
+        Niech $Z=g(X,Y)$. Dystrybuanta $F_Z(z)=P(Z\leq z)=\iint_{\{(x,y):g(x,y)\leq z\}}f(x,y)\mathrm{d}x\mathrm{d}y$\\
+        Gęstość sumy $Z=X+Y:\,f_Z(z)=\int_{-\infty}^{\infty}f(x,z-x)\mathrm{d}x$, 
+        gdy $X$ i $Y$ niezależne, to $f_{X+Y}(z)=\int_{-\infty}^{\infty}f_X(x)f_Y(z-x)\mathrm{d}x$\\
+        Jeśli $X_i\sim N(\mu_i,\sigma_i^2)$ (niezależne), to $\sum_{i=1}^n\sim N(\sum_{i=1}^n,\sum_{i=1}^n\sigma_i^2)$\\
+        Jeśli $X_i\sim \gamma(\alpha_i,\beta)$, to $\sum_{i=1}^nX_i\sim \gamma(\sum_i\alpha_i,\beta)$\\
+        $E[h(X,Y)]=\sum_x\sum_yh(x,y)p(x,y)$ dla dyskretnych, $=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}h(x,y)f(x,y)dxdy$\\
+        $E[aX+bY]=aE[X]+bE[Y],\,V(aX+bY)=a^2V(X)+b^2V(Y)+2ab\mathrm{Cov}(X,Y)$\\
+        $\mathrm{Cov}(X,Y)=E(X,Y)-E(X)E(Y)$\\
+        Współczynnik korelacji: $\rho_{X,Y}=\frac{\mathrm{Cov}(X,Y)}{\sigma_x\cdot\sigma_y}$\\
+        \textbf{Regresja liniowa}\\
+        Jeśli $(X,Y)$ dwuwymiarowa zmienna losowa, dla której istnieją $\sigma_X^2,\,\sigma_Y^2$ oraz Cov, to $E\{[Y-(aX+b)]^2\}$ osiąga minimum gdy $a=\rho_{XY}\frac{\sigma_Y}{\sigma_X}$ oraz $b=m_Y-am_X$
+        tzn. funkcja regresji zmiennej $Y$ przy $X=x$ jest równa $\frac{y-m_Y}{\sigma_Y}=\rho_{XY}\frac{x-m_X}{\sigma_X}$
     \end{multicols*}
 \end{document}

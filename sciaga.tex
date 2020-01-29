@@ -14,7 +14,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            \MaleMale \FemaleFemale Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - \textcopyright Piotr Kowalski, \today , wersja 0.1, MIT License \FemaleFemale \MaleMale
+            \MaleMale \FemaleFemale Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - \textcopyright Piotr Kowalski, \today , wersja 0.2, MIT License \FemaleFemale \MaleMale
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -48,6 +48,40 @@
         Jeżeli zdarzenia $A$ i $B$ są niezależne, to niezależne są również zdarzenia $A$ i $\overline{B}$, $\overline{A}$ i $B$, $\overline{A}$ i $\overline{B}$.\\
         Zdarzenia są wzajemnie niezależne jeśli $P\left(\bigcap_{j=1}^kA_{i_j}\right) = \prod_{j=1}^kP(A_{i_j})$.\\
         Jeśli $A_1\ldots$ są zdarzeniami wzajemnie niezależnymi, to $\left(\bigcup_{i=1}^nA_i\right)=1-\prod_{i=1}^n(1-P(A_i))$
+
+        \noindent\textbf{\large Łączenie prawdopodobieństw}\\
+        szeregowe: $P(A_s)=\prod_{i=1}^np_i$\\
+        równoległe: $P(A_r)=1-\prod_{i=1}^n(1-p_i)$
+
+        \noindent\textbf{\large Dystrybuanta}\\
+        $F(x)=P(X\leq x) = P(\{\omega\in\Omega : X(\omega)\leq x\})$\\
+        Własności:\\
+        $\lim_{x\rightarrow-\infty}F(x)=0$, $\lim_{x\rightarrow\infty}F(x)=1$\\
+        niemalejąca, prawostronnie ciągła\\
+        $P(a<X\leq b)=F(b)-F(a)$
+
+        \noindent\textbf{\large Zmienne losowe dyskretne}\\
+        $p(a) = P(X=a)$ - funkcja prawdopodobieństwa, własności:\\
+        $p(x)\geq 0$, $\sum_{x\in X}p(x)=1$\\
+        Dystrybuanta dyskretna zmiennej $X$ o nośniku $\chi$: $F(x)=\sum_{\{x_i\in \chi:x_i\leq x\}}p(x_i)$.\\
+        Przykład:
+        \[
+            F(x)=
+            \begin{cases}
+                0, x<1\\
+                0.4, 1\leq x<2\\
+                0.9, 2\leq x
+            \end{cases}
+        \]
+        
+        \noindent \textbf{\large Zmienne losowe ciągłe}\\
+        $P(X\in B)=\int_{B} f(x)\,\mathrm{d}x$\\
+        $F(x)=\int_{-\infty}^xf(t)\,\mathrm{d}t$\\
+        $f(x)=F'(x)$\\
+        $P(a\leq X\leq b)=F(b)-F(a)$\\
+        $P(X = a)=0$ dla dowolnego $a\in R$\\
+        Własności funkcji gęstości:\\
+        $\forall_{x\in R}f(x)\geq 0$, $\int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x=1$
 
         \noindent \textbf{\large Doświadczenie Bernoulliego}\\
         Doświadczenie kończące się sukcesem z prawdopodobieństwem p lub porażką z prawdopodobieństwem 1-p.\\

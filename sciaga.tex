@@ -13,7 +13,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.4-BETA
+            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.5-BETA
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -100,17 +100,8 @@
         Dyskretne: $E[X]=\sum_{x_i\in X}x_i\cdot P(X=x_i)$\\
         Ciągłe: $E[X]=\int_{-\infty}^{+\infty}xf(x)\,\mathrm{d}x$\\
         Dla typu mieszanego o $F(x)=pF_d(x)+(1-p)F_c(x),\,E[X]=pE[X_d]+(1-p)E[X_c]$.\\
-        Dla funkcji zmiennej losowej $Y=g(X)$:
-        {
-            \tiny
-            \[
-                E[g(X)]=
-                \begin{cases}
-                    \sum_ig(x_i)P(X=x_i),\,\text{jeśli } X \text{ jest zm.los. dyskretną}\\
-                    \int_{-\infty}^{+\infty}g(x)f_X(x)\mathrm{d}x,\,\text{jeśli } X \text{ jest zm.los. ciągłą}
-                \end{cases}
-            \]
-        }\\
+        Dla funkcji zmiennej losowej $Y=g(X)$:\\
+        $E[g(X)]=\sum_ig(x_i)P(X=x_i)$ jeśli $X$ jest zm.los. dyskretną, $E[g(X)]=\int_{-\infty}^{+\infty}g(x)f_X(x)\mathrm{d}x$, jeśli $X$ jest zm.los. ciągłą.\\
         Jeśli istnieje wartość oczekiwana $E[X]$, to $E[aX+b]=aE[X]+b$
 
         \noindent\textbf{\large Momenty}\\

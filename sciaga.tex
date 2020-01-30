@@ -13,7 +13,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.6-BETA
+            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.7-BETA
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -230,7 +230,7 @@
         gdy $X$ i $Y$ niezależne, to $f_{X+Y}(z)=\int_{-\infty}^{\infty}f_X(x)f_Y(z-x)\mathrm{d}x$\\
         Jeśli $X_i\sim N(\mu_i,\sigma_i^2)$ (niezależne), to $\sum_{i=1}^n\sim N(\sum_{i=1}^n,\sum_{i=1}^n\sigma_i^2)$\\
         Jeśli $X_i\sim \gamma(\alpha_i,\beta)$, to $\sum_{i=1}^nX_i\sim \gamma(\sum_i\alpha_i,\beta)$\\
-        $E[h(X,Y)]=\sum_x\sum_yh(x,y)p(x,y)$ dla dyskretnych, $=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}h(x,y)f(x,y)dxdy$\\
+        $E[h(X,Y)]=\sum_x\sum_yh(x,y)p(x,y)$ dla dyskretnych, $E[h(X,Y)]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}h(x,y)f(x,y)dxdy$ dla ciągłych.\\
         $E[aX+bY]=aE[X]+bE[Y],\,V(aX+bY)=a^2V(X)+b^2V(Y)+2ab\mathrm{Cov}(X,Y)$\\
         $\mathrm{Cov}(X,Y)=E(X,Y)-E(X)E(Y)$\\
         Współczynnik korelacji: $\rho_{X,Y}=\frac{\mathrm{Cov}(X,Y)}{\sigma_x\cdot\sigma_y}$\\

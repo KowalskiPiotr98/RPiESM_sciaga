@@ -13,7 +13,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.5-BETA
+            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.6-BETA
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -175,7 +175,7 @@
         \noindent\textbf{\large Rozkłady zmiennych ciągłych}\\
         \textbf{Jednostajny}\\
         $X$ ma rozkład jednostajny na $[a,b],\,X\sim U(a,b)$ jeśli $f(x)=\frac{1}{b-a}$ dla $x\in[a,b]$ i $0$ dla pozostałych.
-        Dla $x\in[a,b),\,F(x)=\frac{x-a}{b-a}$.\\
+        Dla $x\in[a,b),\,F(x)=\frac{x-a}{b-a}$, dla $x<a\,F(x)=0$, dla $x\geq b\, F(x)=1$\\
         $E[X]=\frac{a+b}{2},\,V(X)=\frac{(b-a)^2}{12}$\\
         \textbf{Normalny}\\
         $X\sim N(\mu, \sigma^2),\,f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right]$\\
@@ -214,8 +214,8 @@
         Zmienne $X$ i $Y$ są niezależne, gdy $p(x,y)=p_X(x)\cdot p_Y(y)$\\
         \textbf{Ciągłe}\\
         $f$ gęstość, jeśli: 
-        $P\{(X,Y)\in A\}=\iint_Af(x,y)\mathrm{d}x\mathrm{y}$\\
-        $f(x,y)=\int_{-\infty}^x\int_{-\infty}^yf(u,v)\mathrm{d}u\mathrm{d}v$\\
+        $P\{(X,Y)\in A\}=\iint_Af(x,y)\mathrm{d}x\mathrm{d}y$\\
+        $F(x,y)=\int_{-\infty}^x\int_{-\infty}^yf(u,v)\mathrm{d}u\mathrm{d}v$\\
         $f(x,y)\geq 0,\,\iint_{R^2}f(x,y)\mathrm{d}x\mathrm{d}y=1$\\
         Gęstości brzegowe X: $f_X(x)=\int_{-\infty}^{\infty}f(x,y)\mathrm{d}y$, y analogicznie\\
         Zmienne $X$ i $Y$ są niezależne, gdy $F(x,y)=F_X(x)\cdot F_Y(y)$, co jest równoważne $f(x,y)=f_X(x)\cdot f_Y(y)$\\

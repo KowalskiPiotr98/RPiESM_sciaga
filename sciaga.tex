@@ -13,7 +13,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.7-BETA
+            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.8-BETA
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -221,9 +221,9 @@
         Zmienne $X$ i $Y$ są niezależne, gdy $F(x,y)=F_X(x)\cdot F_Y(y)$, co jest równoważne $f(x,y)=f_X(x)\cdot f_Y(y)$\\
         \textbf{Funkcje zmiennych losowych}\\
         Dyskretne:\\
-        Jeśli $X_1,\ldots,X_n$ - niezależnie zmienne o jednakowych rozkładach Bernoulliego, to $S_n=\sum_{i=1}^nX_i\sim b(n,p)$, wtedy $P(S_n\leq s)=\sum_{k=0}^s\binom{n}{k}p^k(1-p)^{n-k}$\\
-        Jeśli $X_i\sim b(n_i,p)$, to $\sum_{i=1}^n\sim b(\sum_{i=1}^nn_i,p)$.\\
-        Jeśli $X_i\sim P(\lambda_i)$, to $\sim_{i=1}^nX_i\sim P(\sum_{i=1}^n\lambda_i)$\\
+        Jeśli $X_1,\ldots,X_n$ - niezależnie zmienne o jednakowych rozkładach Bernoulliego, to $S_n=\sum_{i=1}^nX_i\sim B(n,p)$, wtedy $P(S_n\leq s)=\sum_{k=0}^s\binom{n}{k}p^k(1-p)^{n-k}$\\
+        Jeśli $X_i\sim b(n_i,p)$, to $\sum_{i=1}^nX_i\sim b(\sum_{i=1}^nn_i,p)$.\\
+        Jeśli $X_i\sim P(\lambda_i)$, to $\sum_{i=1}^nX_i\sim P(\sum_{i=1}^n\lambda_i)$\\
         Ciągłe:\\
         Niech $Z=g(X,Y)$. Dystrybuanta $F_Z(z)=P(Z\leq z)=\iint_{\{(x,y):g(x,y)\leq z\}}f(x,y)\mathrm{d}x\mathrm{d}y$\\
         Gęstość sumy $Z=X+Y:\,f_Z(z)=\int_{-\infty}^{\infty}f(x,z-x)\mathrm{d}x$, 

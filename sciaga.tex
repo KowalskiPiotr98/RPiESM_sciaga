@@ -13,7 +13,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.1-BETA
+            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.2-BETA
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -46,7 +46,7 @@
         \textbf{Definicja} Zdarzenia są wzajemnie niezależne gdy $P(A\cap B)=P(A)\cdot P(B)$\\
         Jeżeli zdarzenia $A$ i $B$ są niezależne, to niezależne są również zdarzenia $A$ i $\overline{B}$, $\overline{A}$ i $B$, $\overline{A}$ i $\overline{B}$.\\
         Zdarzenia są wzajemnie niezależne jeśli $P\left(\bigcap_{j=1}^kA_{i_j}\right) = \prod_{j=1}^kP(A_{i_j})$.\\
-        Jeśli $A_1\ldots$ są zdarzeniami wzajemnie niezależnymi, to $\left(\bigcup_{i=1}^nA_i\right)=1-\prod_{i=1}^n(1-P(A_i))$
+        Jeśli $A_1\ldots$ są zdarzeniami wzajemnie niezależnymi, to $P\left(\bigcup_{i=1}^nA_i\right)=1-\prod_{i=1}^n(1-P(A_i))$
 
         \noindent\textbf{\large Łączenie prawdopodobieństw}\\
         szeregowe: $P(A_s)=\prod_{i=1}^np_i$\\
@@ -139,8 +139,8 @@
         Prawdopodobieństwo uzyskania ciągu składającego się z k sukcesów, przy założeniu niezależności: $p^k(1-p)^{n-k}$.\\
         Prawdopodobieństwo uzyskania k sukcesów w n niezależnych doświadczeniach z $p\in[0,1]$: $b(k;n,p)=\binom{n}{k}p^k(1-p)^{n-k}$.\\
         \textbf{Poisson} (fr. Ryba)\\
-        Dla $n\geq25$ i $\lambda = n\cdot p \leq10$ możemy przybliżyć rozkładem Poi\ss ona: $b(k;n,p)\approx e^{-np}\frac{(np)^k}{k!}$, na przykład:\\
-        $\sum_{k=0}^{14}b(k;500,0.02)\approx F(14;500\cdot0.02)$, gdzie $F$ jest dystrybuantą rozkładu Ryby, dostępna w tablicach.
+        Dla $n\geq25$ i $\lambda = n\cdot p \leq10$ możemy przybliżyć rozkładem Poi\ss ona: $b(k;n,p)\approx e^{-np}\cdot\frac{(np)^k}{k!}$, na przykład:\\
+        $\sum_{k=0}^{14}b(k;500,0.02)\approx F(14;500\cdot0.02)$, gdzie $F$ jest dystrybuantą rozkładu Ryby, dostępną w tablicach.
 
         \noindent\textbf{\large Rozkłady zmiennych dyskretnych}\\
         \textbf{Bernoulli}\\

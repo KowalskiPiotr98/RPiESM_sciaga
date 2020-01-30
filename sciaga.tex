@@ -13,7 +13,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.5.1-BETA
+            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 1.0.0
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -23,7 +23,7 @@
         Dla danego zbioru zdarzeń elementarnych $\Omega$ oraz $\sigma$-ciała zdarzeń losowych $\mathcal{F}$, \textbf{prawdopodobieństwem} nazywamy funkcję $P:\mathcal{F}\rightarrow \mathcal{R}$ spełniającą:\\
         1. Dla dowolnego zdarzenia losowego $A\in\mathcal{F}$, $P(A)\geq 0$.\\
         2. $P(\Omega)=1$.\\
-        3. Dla dowolnego nieskończonego ciągu zdarzeń losowych $A_1, A_2, \ldots, \forall_{n\in\mathcal{N}} A_n\in\mathcal{F}$, parami rozłącznych, mamy $P\left(\bigcup^\infty_{n=1}\right)=\sum^\infty_{n=1}P(A_n)$.
+        3. Dla dowolnego nieskończonego ciągu zdarzeń losowych $A_1, A_2, \ldots, \forall_{n\in\mathcal{N}} A_n\in\mathcal{F}$, parami rozłącznych, mamy $P\left(\bigcup^\infty_{n=1}A_n\right)=\sum^\infty_{n=1}P(A_n)$.
 
         \noindent \textbf{Dla dowolnych zdarzeń} $A, B$ mamy\\ $P(A\cup B)=P(A)+P(B)-P(A\cap B)$.
 
@@ -46,7 +46,7 @@
         \textbf{Definicja} Zdarzenia są wzajemnie niezależne gdy $P(A\cap B)=P(A)\cdot P(B)$\\
         Jeżeli zdarzenia $A$ i $B$ są niezależne, to niezależne są również zdarzenia $A$ i $\overline{B}$, $\overline{A}$ i $B$, $\overline{A}$ i $\overline{B}$.\\
         Zdarzenia są wzajemnie niezależne jeśli $P\left(\bigcap_{j=1}^kA_{i_j}\right) = \prod_{j=1}^kP(A_{i_j})$.\\
-        Jeśli $A_1\ldots$ są zdarzeniami wzajemnie niezależnymi, to $\left(\bigcup_{i=1}^nA_i\right)=1-\prod_{i=1}^n(1-P(A_i))$
+        Jeśli $A_1\ldots$ są zdarzeniami wzajemnie niezależnymi, to $P\left(\bigcup_{i=1}^nA_i\right)=1-\prod_{i=1}^n(1-P(A_i))$
 
         \noindent\textbf{\large Łączenie prawdopodobieństw}\\
         szeregowe: $P(A_s)=\prod_{i=1}^np_i$\\
@@ -100,17 +100,8 @@
         Dyskretne: $E[X]=\sum_{x_i\in X}x_i\cdot P(X=x_i)$\\
         Ciągłe: $E[X]=\int_{-\infty}^{+\infty}xf(x)\,\mathrm{d}x$\\
         Dla typu mieszanego o $F(x)=pF_d(x)+(1-p)F_c(x),\,E[X]=pE[X_d]+(1-p)E[X_c]$.\\
-        Dla funkcji zmiennej losowej $Y=g(X)$:
-        {
-            \tiny
-            \[
-                E[g(X)]=
-                \begin{cases}
-                    \sum_ig(x_i)P(X=x_i),\,\text{jeśli } X \text{ jest zm.los. dyskretną}\\
-                    \int_{-\infty}^{+\infty}g(x)f_X(x)\mathrm{d}x,\,\text{jeśli } X \text{ jest zm.los. ciągłą}
-                \end{cases}
-            \]
-        }\\
+        Dla funkcji zmiennej losowej $Y=g(X)$:\\
+        $E[g(X)]=\sum_ig(x_i)P(X=x_i)$ jeśli $X$ jest zm.los. dyskretną, $E[g(X)]=\int_{-\infty}^{+\infty}g(x)f_X(x)\mathrm{d}x$, jeśli $X$ jest zm.los. ciągłą.\\
         Jeśli istnieje wartość oczekiwana $E[X]$, to $E[aX+b]=aE[X]+b$
 
         \noindent\textbf{\large Momenty}\\
@@ -124,7 +115,8 @@
         Odchylenie standardowe: $\sigma=\sqrt{V(X)}$
         Zmienna $X$ jest standaryzowana jeśli $E[X]=0$ i $V(X)=1$\\
         Standaryzacja: $X^*=\frac{X-\mu}{\sigma}$\\
-        Współczynnik skośności: $\gamma_1=E\left[\left(\frac{X-\mu}{\sigma}\right)\right]=\frac{E[(X-\mu)^3]}{(E[(X-\mu)^2])^{3/2}}$\\
+        Współczynnik skośności:\\
+        $\gamma_1=E\left[\left(\frac{X-\mu}{\sigma}\right)^3\right]=\frac{\mu_3}{\sigma^3}=\frac{E[(X-\mu)^3]}{(E[(X-\mu)^2])^{3/2}}$\\
         Kurtoza: $\gamma_2=\frac{\mu_4}{\sigma^4}-3$
 
         \noindent\textbf{\large Kwantyle, kwartyle}\\
@@ -139,8 +131,8 @@
         Prawdopodobieństwo uzyskania ciągu składającego się z k sukcesów, przy założeniu niezależności: $p^k(1-p)^{n-k}$.\\
         Prawdopodobieństwo uzyskania k sukcesów w n niezależnych doświadczeniach z $p\in[0,1]$: $b(k;n,p)=\binom{n}{k}p^k(1-p)^{n-k}$.\\
         \textbf{Poisson} (fr. Ryba)\\
-        Dla $n\geq25$ i $\lambda = n\cdot p \leq10$ możemy przybliżyć rozkładem Poi\ss ona: $b(k;n,p)\approx e^{-np}\frac{(np)^k}{k!}$, na przykład:\\
-        $\sum_{k=0}^{14}b(k;500,0.02)\approx F(14;500\cdot0.02)$, gdzie $F$ jest dystrybuantą rozkładu Ryby, dostępna w tablicach.
+        Dla $n\geq25$ i $\lambda = n\cdot p \leq10$ możemy przybliżyć rozkładem Poi\ss ona: $b(k;n,p)\approx e^{-np}\cdot\frac{(np)^k}{k!}$, na przykład:\\
+        $\sum_{k=0}^{14}b(k;500,0.02)\approx F(14;500\cdot0.02)$, gdzie $F$ jest dystrybuantą rozkładu Ryby, dostępną w tablicach.
 
         \noindent\textbf{\large Rozkłady zmiennych dyskretnych}\\
         \textbf{Bernoulli}\\
@@ -183,7 +175,7 @@
         \noindent\textbf{\large Rozkłady zmiennych ciągłych}\\
         \textbf{Jednostajny}\\
         $X$ ma rozkład jednostajny na $[a,b],\,X\sim U(a,b)$ jeśli $f(x)=\frac{1}{b-a}$ dla $x\in[a,b]$ i $0$ dla pozostałych.
-        Dla $x\in[a,b),\,F(x)=\frac{x-a}{b-a}$.\\
+        Dla $x\in[a,b),\,F(x)=\frac{x-a}{b-a}$, dla $x<a\,F(x)=0$, dla $x\geq b\, F(x)=1$\\
         $E[X]=\frac{a+b}{2},\,V(X)=\frac{(b-a)^2}{12}$\\
         \textbf{Normalny}\\
         $X\sim N(\mu, \sigma^2),\,f(x)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right]$\\
@@ -222,25 +214,25 @@
         Zmienne $X$ i $Y$ są niezależne, gdy $p(x,y)=p_X(x)\cdot p_Y(y)$\\
         \textbf{Ciągłe}\\
         $f$ gęstość, jeśli: 
-        $P\{(X,Y)\in A\}=\iint_Af(x,y)\mathrm{d}x\mathrm{y}$\\
-        $f(x,y)=\int_{-\infty}^x\int_{-\infty}^yf(u,v)\mathrm{d}u\mathrm{d}v$\\
+        $P\{(X,Y)\in A\}=\iint_Af(x,y)\mathrm{d}x\mathrm{d}y$\\
+        $F(x,y)=\int_{-\infty}^x\int_{-\infty}^yf(u,v)\mathrm{d}u\mathrm{d}v$\\
         $f(x,y)\geq 0,\,\iint_{R^2}f(x,y)\mathrm{d}x\mathrm{d}y=1$\\
         Gęstości brzegowe X: $f_X(x)=\int_{-\infty}^{\infty}f(x,y)\mathrm{d}y$, y analogicznie\\
         Zmienne $X$ i $Y$ są niezależne, gdy $F(x,y)=F_X(x)\cdot F_Y(y)$, co jest równoważne $f(x,y)=f_X(x)\cdot f_Y(y)$\\
         \textbf{Funkcje zmiennych losowych}\\
         Dyskretne:\\
-        Jeśli $X_1,\ldots,X_n$ - niezależnie zmienne o jednakowych rozkładach Bernoulliego, to $S_n=\sum_{i=1}^nX_i\sim b(n,p)$\\
-        Jeśli $X_i\sim b(n_i,p)$, to $\sum_{i=1}^n\sim b(\sum_{i=1}^nn_i,p)$.\\
-        Jeśli $X_i\sim P(\lambda_i)$, to $\sim_{i=1}^nX_i\sim P(\sum_{i=1}^n\lambda_i)$\\
+        Jeśli $X_1,\ldots,X_n$ - niezależnie zmienne o jednakowych rozkładach Bernoulliego, to $S_n=\sum_{i=1}^nX_i\sim B(n,p)$, wtedy $P(S_n\leq s)=\sum_{k=0}^s\binom{n}{k}p^k(1-p)^{n-k}$\\
+        Jeśli $X_i\sim b(n_i,p)$, to $\sum_{i=1}^nX_i\sim b(\sum_{i=1}^nn_i,p)$.\\
+        Jeśli $X_i\sim P(\lambda_i)$, to $\sum_{i=1}^nX_i\sim P(\sum_{i=1}^n\lambda_i)$\\
         Ciągłe:\\
         Niech $Z=g(X,Y)$. Dystrybuanta $F_Z(z)=P(Z\leq z)=\iint_{\{(x,y):g(x,y)\leq z\}}f(x,y)\mathrm{d}x\mathrm{d}y$\\
         Gęstość sumy $Z=X+Y:\,f_Z(z)=\int_{-\infty}^{\infty}f(x,z-x)\mathrm{d}x$, 
         gdy $X$ i $Y$ niezależne, to $f_{X+Y}(z)=\int_{-\infty}^{\infty}f_X(x)f_Y(z-x)\mathrm{d}x$\\
-        Jeśli $X_i\sim N(\mu_i,\sigma_i^2)$ (niezależne), to $\sum_{i=1}^n\sim N(\sum_{i=1}^n,\sum_{i=1}^n\sigma_i^2)$\\
+        Jeśli $X_i\sim N(\mu_i,\sigma_i^2)$ (niezależne), to $\sum_{i=1}^nX_i\sim N(\sum_{i=1}^{n}\mu_i,\sum_{i=1}^n\sigma_i^2)$\\
         Jeśli $X_i\sim \gamma(\alpha_i,\beta)$, to $\sum_{i=1}^nX_i\sim \gamma(\sum_i\alpha_i,\beta)$\\
-        $E[h(X,Y)]=\sum_x\sum_yh(x,y)p(x,y)$ dla dyskretnych, $=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}h(x,y)f(x,y)dxdy$\\
+        $E[h(X,Y)]=\sum_x\sum_yh(x,y)p(x,y)$ dla dyskretnych, $E[h(X,Y)]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}h(x,y)f(x,y)dxdy$ dla ciągłych.\\
         $E[aX+bY]=aE[X]+bE[Y],\,V(aX+bY)=a^2V(X)+b^2V(Y)+2ab\mathrm{Cov}(X,Y)$\\
-        $\mathrm{Cov}(X,Y)=E(X,Y)-E(X)E(Y)$\\
+        $\mathrm{Cov}(X,Y)=E[XY]-E[X]E[Y]$\\
         Współczynnik korelacji: $\rho_{X,Y}=\frac{\mathrm{Cov}(X,Y)}{\sigma_x\cdot\sigma_y}$\\
         \textbf{Regresja liniowa}\\
         Jeśli $(X,Y)$ dwuwymiarowa zmienna losowa, dla której istnieją $\sigma_X^2,\,\sigma_Y^2$ oraz Cov, to $E\{[Y-(aX+b)]^2\}$ osiąga minimum gdy $a=\rho_{XY}\frac{\sigma_Y}{\sigma_X}$ oraz $b=m_Y-am_X$
@@ -250,7 +242,7 @@
         \textbf{Przybliżenie normalne}\\
         $P(S_n\leq x)\approx \Phi(\frac{S_n-n\mu}{\sigma\sqrt{n}})$, gdzie $E[x_i]=\mu,\,V(X_i)=\sigma^2,\,n\geq 50$\\
         \textbf{Rozkładu dwumianowego rozkładem normalnym}\\
-        Jeśli $S_n\sim b(n,p),\,n\geq 25,\, n\geq 5,\, n(1-p)\geq 5$, to $P(S_n\leq x)\approx\Phi\left(\frac{x+0.5-np}{\sqrt{np(1-p)}}\right)$\\
+        Jeśli $S_n\sim b(n,p),\,n\geq 25,\, np\geq 5,\, n(1-p)\geq 5$, to $P(S_n\leq x)\approx\Phi\left(\frac{x+0.5-np}{\sqrt{np(1-p)}}\right)$\\
         \textbf{Rozkładu Poissona}\\
         $F(k;\lambda)\approx \Phi\left(\frac{k+0.5-\lambda}{\sqrt{\lambda}}\right),\,\lambda>10$
 
@@ -258,8 +250,8 @@
         Rozstęp $R=\max\{x_1,\ldots,x_n\}-\min\{x_1,\ldots,x_n\}$\\
         Średnia:\\
         dla danych niepogrupowanych (naprawdę musisz to sprawdzać?)\\
-        dla danych pogrupowanych: $\overline{x}=\frac{1}{n}\sum_{j=1}^kn_j\overline{x_j}$\\
-        Wariancja: niepogrupowane: $s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x}_n)^2$\\
-        pogrupowane: $s^2=\frac{1}{n-1}\sum_{j=1}^kn_j(\overline{x_j}-\overline{x_n})^2$\\
+        dla danych pogrupowanych na k klas: $\overline{x}=\frac{1}{n}\sum_{j=1}^kn_j\overline{x_j}$\\
+        Wariancja: niepogrupowane:\\ $s^2=\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x}_n)^2$\\
+        pogrupowane na k klas:\\ $s^2=\frac{1}{n-1}\sum_{j=1}^kn_j(\overline{x_j}-\overline{x_n})^2$\\
     \end{multicols*}
 \end{document}

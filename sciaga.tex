@@ -13,7 +13,7 @@
     \begin{multicols*}{4}
         [
         \begin{center}
-            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.8-BETA
+            Ściąga na egzamin z Rachunku Prawdopodobieństwa i Elementów Statystyki Matematycznej - Piotr Kowalski, \today , wersja 0.6.9-{\large NICE}-BETA
         \end{center}
         ]
         \noindent\textbf{\large Zdarzenie elementarne}\\
@@ -228,11 +228,11 @@
         Niech $Z=g(X,Y)$. Dystrybuanta $F_Z(z)=P(Z\leq z)=\iint_{\{(x,y):g(x,y)\leq z\}}f(x,y)\mathrm{d}x\mathrm{d}y$\\
         Gęstość sumy $Z=X+Y:\,f_Z(z)=\int_{-\infty}^{\infty}f(x,z-x)\mathrm{d}x$, 
         gdy $X$ i $Y$ niezależne, to $f_{X+Y}(z)=\int_{-\infty}^{\infty}f_X(x)f_Y(z-x)\mathrm{d}x$\\
-        Jeśli $X_i\sim N(\mu_i,\sigma_i^2)$ (niezależne), to $\sum_{i=1}^n\sim N(\sum_{i=1}^n,\sum_{i=1}^n\sigma_i^2)$\\
+        Jeśli $X_i\sim N(\mu_i,\sigma_i^2)$ (niezależne), to $\sum_{i=1}^nX_i\sim N(\sum_{i=1}^{n}\mu_i,\sum_{i=1}^n\sigma_i^2)$\\
         Jeśli $X_i\sim \gamma(\alpha_i,\beta)$, to $\sum_{i=1}^nX_i\sim \gamma(\sum_i\alpha_i,\beta)$\\
         $E[h(X,Y)]=\sum_x\sum_yh(x,y)p(x,y)$ dla dyskretnych, $E[h(X,Y)]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}h(x,y)f(x,y)dxdy$ dla ciągłych.\\
         $E[aX+bY]=aE[X]+bE[Y],\,V(aX+bY)=a^2V(X)+b^2V(Y)+2ab\mathrm{Cov}(X,Y)$\\
-        $\mathrm{Cov}(X,Y)=E(X,Y)-E(X)E(Y)$\\
+        $\mathrm{Cov}(X,Y)=E[XY]-E[X]E[Y]$\\
         Współczynnik korelacji: $\rho_{X,Y}=\frac{\mathrm{Cov}(X,Y)}{\sigma_x\cdot\sigma_y}$\\
         \textbf{Regresja liniowa}\\
         Jeśli $(X,Y)$ dwuwymiarowa zmienna losowa, dla której istnieją $\sigma_X^2,\,\sigma_Y^2$ oraz Cov, to $E\{[Y-(aX+b)]^2\}$ osiąga minimum gdy $a=\rho_{XY}\frac{\sigma_Y}{\sigma_X}$ oraz $b=m_Y-am_X$
